@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; width: 100%; padding: 20px;">
+    <h2 style="color: black; text-shadow: 2px 2px 2px #4CAF50;">Please login to continue</h2>
+    <form>
+        <input type="text" name="username" placeholder="Username" required style="margin-bottom: 10px; padding: 10px; width: 200px;">
+        <input type="password" name="password" placeholder="Password" required style="margin-bottom: 10px; padding: 10px; width: 200px;">
+        <button type="submit" style="padding: 10px 20px; background-color: #4CAF50; color: black; border: none; cursor: pointer;">Login</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,4 +1,4 @@
-LINK: link to the repository
+LINK: https://github.com/RedFoxFinn/CSBP1
 installation instructions if needed
 
 FLAW 1:

@@ -4,7 +4,8 @@ This repository is housing the course project of mine for the University of Hels
 
 Goal is to build a web app that's faulty and the provide the fixes. Faulty in this context means that it should contain at least 5 of the vulnerability categories from the [OWASP Top 10](https://owasp.org/Top10/) (2025 version could be already released. If that's true, try [this](https://owasp.org/www-project-top-ten/2021/) link instead).
 
-```Make sure that (these are the most common reasons for project being rejected)
+```
+Make sure that (these are the most common reasons for project being rejected)
 
 - The flaws are real, and not just hypothetical, and the fixes are included in the code.
 - The flaws are in the code or in installation script, for example, having admin/admin user in the database is not enough.
