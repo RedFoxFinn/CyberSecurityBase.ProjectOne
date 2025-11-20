@@ -1,10 +1,4 @@
-# Cyber Security Base - Course project 1
 
-This repository is housing the course project of mine for the University of Helsinki course CSB.
-
-Goal is to build a web app that's faulty and the provide the fixes. Faulty in this context means that it should contain at least 5 of the vulnerability categories from the [OWASP Top 10](https://owasp.org/Top10/) (2025 version could be already released. If that's true, try [this](https://owasp.org/www-project-top-ten/2021/) link instead).
-
-````markdown
 # Cyber Security Base - Course project 1
 
 This repository is housing the course project of mine for the University of Helsinki course CSB.
@@ -72,7 +66,7 @@ The code was written with Visual Studio Code as the IDE and in CUBBLI OS (Uni. H
 ## Setup & running the application
 
 ### 1. Create virtual environment (VENV)
-```
+```bash
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
