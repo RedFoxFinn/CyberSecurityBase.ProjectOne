@@ -11,3 +11,5 @@
 __pycache__/
 *.code-workspace
 /*/**/__pycache__/
+venv/
+venv/*
