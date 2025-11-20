@@ -1,1 +1,13 @@
-csbp1/db.sqlite3
+*.pyc
+*.pyo
+.Python
+.idea/
+*.log
+*.sqlite3
+.vscode/
+.env
+.venv
+.venv/
+__pycache__/
+*.code-workspace
+/*/**/__pycache__/

@@ -1,0 +1,233 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div style="max-width: 900px; margin: 0 auto; padding: 40px 20px;">
+    <!-- Header Section -->
+    <div style="margin-bottom: 40px;">
+        <a href="{% url 'core:task_list' %}" style="color: #764ba2; text-decoration: none; font-size: 14px; font-weight: 600;">
+            ← Back to Tasks
+        </a>
+    </div>
+
+    <!-- Task Detail Card -->
+    <div style="
+        background: white;
+        border-radius: 12px;
+        padding: 40px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border-left: 6px solid #764ba2;
+    ">
+        <!-- Title and Priority -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 30px;">
+            <h1 style="margin: 0; font-size: 32px; color: #333; flex: 1;">{{ task.title }}</h1>
+            <span style="
+                background: 
+                    {% if task.priority == 1 %}#4CAF50
+                    {% elif task.priority == 2 %}#8BC34A
+                    {% elif task.priority == 3 %}#FF9800
+                    {% elif task.priority == 4 %}#FF6B6B
+                    {% else %}#C62828
+                    {% endif %};
+                color: white;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: 600;
+                white-space: nowrap;
+                text-transform: uppercase;
+            ">
+                Priority {{ task.priority }}
+            </span>
+        </div>
+
+        <!-- Status Section -->
+        <div style="
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            padding: 16px;
+            background: #f5f5f5;
+            border-radius: 8px;
+        ">
+            <span style="font-size: 24px;">
+                {% if task.status == 'to_do' %}📋
+                {% elif task.status == 'in_progress' %}⏳
+                {% else %}✅
+                {% endif %}
+            </span>
+            <div>
+                <div style="font-size: 12px; color: #999; text-transform: uppercase;">Status</div>
+                <div style="font-size: 16px; font-weight: 600; color: #333; text-transform: capitalize;">
+                    {% if task.status == 'to_do' %}To Do
+                    {% elif task.status == 'in_progress' %}In Progress
+                    {% else %}Done
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Owner Information -->
+        <div style="
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            padding: 16px;
+            background: #f5f5f5;
+            border-radius: 8px;
+        ">
+            <span style="font-size: 20px;">👤</span>
+            <div>
+                <div style="font-size: 12px; color: #999; text-transform: uppercase;">Owner</div>
+                <div style="font-size: 16px; font-weight: 600; color: #333;">
+                    {{ task.owner.first_name }} {{ task.owner.last_name }}
+                    <span style="color: #999; font-size: 14px;">({{ task.owner.username }})</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        {% if task.description %}
+        <div style="margin-bottom: 30px;">
+            <h3 style="margin: 0 0 12px 0; color: #333; font-size: 16px; text-transform: uppercase; color: #999;">Description</h3>
+            <div style="
+                background: #f5f5f5;
+                padding: 20px;
+                border-radius: 8px;
+                color: #555;
+                line-height: 1.6;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            ">{{ task.description }}</div>
+        </div>
+        {% endif %}
+
+        <!-- Dates Section -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+            <!-- Created Date -->
+            <div style="padding: 16px; background: #f5f5f5; border-radius: 8px;">
+                <div style="font-size: 12px; color: #999; text-transform: uppercase; margin-bottom: 8px;">Created</div>
+                <div style="font-size: 14px; font-weight: 600; color: #333;">
+                    {{ task.created_at|date:"M d, Y" }}
+                </div>
+                <div style="font-size: 12px; color: #999;">
+                    {{ task.created_at|time:"H:i" }}
+                </div>
+            </div>
+
+            <!-- Due Date -->
+            <div style="padding: 16px; background: #f5f5f5; border-radius: 8px;">
+                <div style="font-size: 12px; color: #999; text-transform: uppercase; margin-bottom: 8px;">Due Date</div>
+                <div style="font-size: 14px; font-weight: 600; color: #333;">
+                    {% if task.due_date %}
+                        {{ task.due_date|date:"M d, Y" }}
+                    {% else %}
+                        <span style="color: #ccc;">Not set</span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Last Updated -->
+        <div style="padding: 16px; background: #f5f5f5; border-radius: 8px; margin-bottom: 30px;">
+            <div style="font-size: 12px; color: #999; text-transform: uppercase; margin-bottom: 8px;">Last Updated</div>
+            <div style="font-size: 14px; color: #555;">
+                {{ task.updated_at|date:"M d, Y" }} at {{ task.updated_at|time:"H:i" }}
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div style="display: flex; gap: 12px; margin-top: 40px; border-top: 1px solid #eee; padding-top: 30px;">
+            <!-- Edit Button -->
+            {% if user.is_authenticated and vulnerable_mode or user.is_authenticated and task.owner == user %}
+            <a href="{% url 'core:task_edit' task.id %}" style="
+                background: #764ba2;
+                color: white;
+                padding: 12px 24px;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 14px;
+                cursor: pointer;
+                border: none;
+                transition: background 0.3s;
+                display: inline-block;
+            " onmouseover="this.style.background='#5a3980'" onmouseout="this.style.background='#764ba2'">
+                ✏️ Edit Task
+            </a>
+            {% endif %}
+
+            <!-- Delete Button -->
+            {% if user.is_authenticated and vulnerable_mode or user.is_authenticated and task.owner == user %}
+            <button onclick="deleteTask({{ task.id }})" style="
+                background: #ff6b6b;
+                color: white;
+                padding: 12px 24px;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 14px;
+                cursor: pointer;
+                border: none;
+                transition: background 0.3s;
+            " onmouseover="this.style.background='#ff5252'" onmouseout="this.style.background='#ff6b6b'">
+                🗑️ Delete Task
+            </button>
+            {% endif %}
+
+            <!-- Back to List Button -->
+            <a href="{% url 'core:task_list' %}" style="
+                background: #e0e0e0;
+                color: #333;
+                padding: 12px 24px;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 14px;
+                cursor: pointer;
+                border: none;
+                transition: background 0.3s;
+                display: inline-block;
+            " onmouseover="this.style.background='#d0d0d0'" onmouseout="this.style.background='#e0e0e0'">
+                ← Back to Tasks
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+function deleteTask(taskId) {
+    if (confirm('Are you sure you want to delete this task? This action cannot be undone.')) {
+        fetch(`/api/tasks/${taskId}/delete/`, {
+            method: 'DELETE',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken'),
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                window.location.href = '{% url "core:task_list" %}';
+            } else {
+                alert('Error deleting task');
+            }
+        });
+    }
+}
+
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+</script>
+{% endblock %}

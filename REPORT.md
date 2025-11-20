@@ -1,4 +1,4 @@
-LINK: https://github.com/RedFoxFinn/CSBP1
+LINK: https://github.com/RedFoxFinn/CyberSecurityBase.ProjectOne
 installation instructions if needed
 
 FLAW 1:

@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% comment %}
+This page serves as a backup/reference view. The main landing page is landing.html
+{% endcomment %}
+
+{% block content %}
+<section class="section">
+    <h2>Application Status</h2>
+    <div class="info-box">
+        <strong>Current Mode:</strong> {{ mode_status }}<br>
+        <strong>Authenticated:</strong> {{ user.is_authenticated|yesno:"Yes,No" }}<br>
+        {% if user.is_authenticated %}
+            <strong>Username:</strong> {{ user.username }}
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

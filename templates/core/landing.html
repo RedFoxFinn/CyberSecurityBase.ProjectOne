@@ -1,0 +1,39 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<section class="section welcome-section">
+    <h2>Welcome to Task Management System</h2>
+    <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+        This is a demonstrational application showcasing <strong>the greatest hits of OWASP Top 10 vulnerabilities</strong>.
+    </p>
+    <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+        The application has intentional security flaws in the <span style="color: #c41e3a; font-weight: 600;">vulnerable</span> mode (indicated by the crimson background) meanwhile <br>the <span style="color: #1e7e34; font-weight: 600;">secure</span> mode (indicated by the purple background) is the version where everything works as they are supposed to.
+    </br>
+    </br>
+</section>
+
+<section class="section">
+    <h2>Features</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>📋 Task Management</h3>
+            <p>Create, read, update, and delete tasks with user-based ownership.</p>
+        </div>
+        <div class="feature-card">
+            <h3>👥 User Authentication</h3>
+            <p>Secure login system using Django's built-in authentication.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🔐 Access Control</h3>
+            <p>Limit the access by the user roles.</p>
+        </div>
+        <div class="feature-card">
+            <h3>📊 Admin Dashboard</h3>
+            <p>Full Django admin interface for managing tasks and users.</p>
+        </div>
+    </div>
+    </br>
+    <h2 style="text-align: center;">Very secure - much wow!</h2>
+</section>
+
+{% endblock %}

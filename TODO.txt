@@ -1,9 +1,0 @@
-- kirjautuminen (tyhjällä superadminit)
-- rekisteröityminen (defaulttaa adminit)
-- listanäkymä tietokannan kanssa (pääsy adminina kaikkiin taskeihin)
-- salasananvaihto
-- account handling -sivu (ks. ed)
-- listanäkymästä taskien poisto
-- listanäkymässä taskien lisäys
-- listanäkymässä taskien lisäys kenelle vain adminina
-- disabloi csrf?

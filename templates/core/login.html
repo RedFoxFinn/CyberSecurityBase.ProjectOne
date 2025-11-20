@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Login - Task Management{% endblock %}
+
+{% block content %}
+<div style="max-width: 500px; margin: 60px auto; padding: 20px;">
+    <h1 style="text-align: center; color: white; margin-bottom: 30px;">Login</h1>
+    
+    {% if error %}
+    <div style="background-color: #f8d7da; color: #721c24; padding: 15px; border-radius: 5px; margin-bottom: 20px; border-left: 4px solid #f5c6cb;">
+        <strong>Login Error:</strong>
+        <p style="margin: 10px 0 0 0;">{{ error }}</p>
+    </div>
+    {% endif %}
+    
+    <form method="post" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px); padding: 30px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.2);">
+        {% csrf_token %}
+        
+        <div style="margin-bottom: 20px;">
+            <label for="username" style="display: block; color: white; margin-bottom: 8px; font-weight: 500;">Username:</label>
+            <input type="text" id="username" name="username" required autofocus style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box;">
+        </div>
+        
+        <div style="margin-bottom: 30px;">
+            <label for="password" style="display: block; color: white; margin-bottom: 8px; font-weight: 500;">Password:</label>
+            <input type="password" id="password" name="password" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box;">
+        </div>
+        
+        <button type="submit" style="width: 100%; padding: 12px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 5px; font-size: 16px; font-weight: 600; cursor: pointer; transition: transform 0.2s;">
+            Login
+        </button>
+    </form>
+    
+    <p style="text-align: center; color: white; margin-top: 20px;">
+        Don't have an account? <a href="{% url 'core:register' %}" style="color: #667eea; text-decoration: none; font-weight: 600;">Register here</a>
+    </p>
+</div>
+{% endblock %}

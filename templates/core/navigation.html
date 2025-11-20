@@ -1,0 +1,16 @@
+<nav class="navigation">
+    <ul class="nav-list">
+        <li><a href="{% url 'core:home' %}">Home</a></li>
+        <li><a href="{% url 'core:task_list' %}">Tasks</a></li>
+        {% if user.is_authenticated %}
+            {% if user.is_superuser %}
+                <li><a href="/admin/">Dashboard</a></li>
+            {% endif %}
+            <li><a href="{% url 'core:logout' %}">Logout ({{ user.username }})</a></li>
+        {% else %}
+            <li><a href="{% url 'core:login' %}">Login</a></li>
+            <li><a href="{% url 'core:register' %}">Register</a></li>
+        {% endif %}
+    </ul>
+</nav>
+

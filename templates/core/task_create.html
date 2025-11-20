@@ -1,0 +1,296 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div style="max-width: 700px; margin: 0 auto; padding: 40px 20px;">
+    <!-- Header Section -->
+    <div style="margin-bottom: 40px;">
+        <a href="{% url 'core:task_list' %}" style="color: #764ba2; text-decoration: none; font-size: 14px; font-weight: 600;">
+            ← Back to Tasks
+        </a>
+    </div>
+
+    <!-- Create Task Form Card -->
+    <div style="
+        background: white;
+        border-radius: 12px;
+        padding: 40px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border-left: 6px solid #764ba2;
+    ">
+        <h1 style="margin: 0 0 30px 0; font-size: 28px; color: #333;">Create New Task</h1>
+
+        {% if error %}
+        <div style="
+            padding: 16px;
+            background: #fee;
+            border: 1px solid #fcc;
+            border-radius: 6px;
+            color: #c33;
+            margin-bottom: 20px;
+        ">
+            ⚠️ {{ error }}
+        </div>
+        {% endif %}
+
+        <form method="POST" style="display: flex; flex-direction: column; gap: 24px;">
+            {% csrf_token %}
+
+            <!-- Title Field -->
+            <div>
+                <label for="title" style="
+                    display: block;
+                    font-weight: 600;
+                    color: #333;
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                ">
+                    Task Title *
+                </label>
+                <input
+                    type="text"
+                    name="title"
+                    id="title"
+                    value="{{ request.POST.title }}"
+                    required
+                    placeholder="Enter task title"
+                    style="
+                        width: 100%;
+                        padding: 12px;
+                        border: 2px solid #e0e0e0;
+                        border-radius: 6px;
+                        font-size: 16px;
+                        font-family: inherit;
+                        box-sizing: border-box;
+                        transition: border-color 0.3s;
+                    "
+                    onfocus="this.style.borderColor='#764ba2'"
+                    onblur="this.style.borderColor='#e0e0e0'"
+                />
+                <div style="font-size: 12px; color: #999; margin-top: 4px;">Enter a descriptive title for your task</div>
+            </div>
+
+            <!-- Description Field -->
+            <div>
+                <label for="description" style="
+                    display: block;
+                    font-weight: 600;
+                    color: #333;
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                ">
+                    Description
+                </label>
+                <textarea
+                    name="description"
+                    id="description"
+                    rows="6"
+                    placeholder="Enter task description (optional)"
+                    style="
+                        width: 100%;
+                        padding: 12px;
+                        border: 2px solid #e0e0e0;
+                        border-radius: 6px;
+                        font-size: 16px;
+                        font-family: inherit;
+                        box-sizing: border-box;
+                        resize: vertical;
+                        transition: border-color 0.3s;
+                    "
+                    onfocus="this.style.borderColor='#764ba2'"
+                    onblur="this.style.borderColor='#e0e0e0'"
+                >{{ request.POST.description }}</textarea>
+                <div style="font-size: 12px; color: #999; margin-top: 4px;">Provide detailed information about the task</div>
+            </div>
+
+            <!-- Status Field -->
+            <div>
+                <label for="status" style="
+                    display: block;
+                    font-weight: 600;
+                    color: #333;
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                ">
+                    Initial Status
+                </label>
+                <select
+                    name="status"
+                    id="status"
+                    style="
+                        width: 100%;
+                        padding: 12px;
+                        border: 2px solid #e0e0e0;
+                        border-radius: 6px;
+                        font-size: 16px;
+                        font-family: inherit;
+                        box-sizing: border-box;
+                        background-color: white;
+                        cursor: pointer;
+                        transition: border-color 0.3s;
+                    "
+                    onfocus="this.style.borderColor='#764ba2'"
+                    onblur="this.style.borderColor='#e0e0e0'"
+                >
+                    <option value="to_do" selected>📋 To Do</option>
+                    <option value="in_progress">⏳ In Progress</option>
+                    <option value="done">✅ Done</option>
+                </select>
+                <div style="font-size: 12px; color: #999; margin-top: 4px;">Select the initial status of the task</div>
+            </div>
+
+            <!-- Priority Field -->
+            <div>
+                <label for="priority" style="
+                    display: block;
+                    font-weight: 600;
+                    color: #333;
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                ">
+                    Priority Level
+                </label>
+                <select
+                    name="priority"
+                    id="priority"
+                    style="
+                        width: 100%;
+                        padding: 12px;
+                        border: 2px solid #e0e0e0;
+                        border-radius: 6px;
+                        font-size: 16px;
+                        font-family: inherit;
+                        box-sizing: border-box;
+                        background-color: white;
+                        cursor: pointer;
+                        transition: border-color 0.3s;
+                    "
+                    onfocus="this.style.borderColor='#764ba2'"
+                    onblur="this.style.borderColor='#e0e0e0'"
+                >
+                    <option value="1">1 - Lowest 🟢</option>
+                    <option value="2">2 - Low 🟢</option>
+                    <option value="3" selected>3 - Medium 🟠</option>
+                    <option value="4">4 - High 🔴</option>
+                    <option value="5">5 - Highest 🔴</option>
+                </select>
+                <div style="font-size: 12px; color: #999; margin-top: 4px;">1 = Lowest priority, 5 = Highest priority</div>
+            </div>
+
+            <!-- Due Date Field -->
+            <div>
+                <label for="due_date" style="
+                    display: block;
+                    font-weight: 600;
+                    color: #333;
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                ">
+                    Due Date (Optional)
+                </label>
+                <input
+                    type="date"
+                    name="due_date"
+                    id="due_date"
+                    style="
+                        width: 100%;
+                        padding: 12px;
+                        border: 2px solid #e0e0e0;
+                        border-radius: 6px;
+                        font-size: 16px;
+                        font-family: inherit;
+                        box-sizing: border-box;
+                        background-color: white;
+                        cursor: pointer;
+                        transition: border-color 0.3s;
+                    "
+                    onfocus="this.style.borderColor='#764ba2'"
+                    onblur="this.style.borderColor='#e0e0e0'"
+                />
+                <div style="font-size: 12px; color: #999; margin-top: 4px;">Set a deadline for this task</div>
+            </div>
+
+            <!-- Task Metadata (Read-only) -->
+            <div style="
+                background: #f5f5f5;
+                padding: 16px;
+                border-radius: 8px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+                font-size: 12px;
+            ">
+                <div>
+                    <div style="color: #999; text-transform: uppercase; margin-bottom: 4px;">Task Owner</div>
+                    <div style="color: #333; font-weight: 600;">{{ user.username }}</div>
+                </div>
+                <div>
+                    <div style="color: #999; text-transform: uppercase; margin-bottom: 4px;">Status</div>
+                    <div style="color: #333; font-weight: 600;">New Task</div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div style="display: flex; gap: 12px; margin-top: 30px; border-top: 1px solid #eee; padding-top: 30px;">
+                <button
+                    type="submit"
+                    style="
+                        background: #764ba2;
+                        color: white;
+                        padding: 12px 24px;
+                        border-radius: 6px;
+                        font-weight: 600;
+                        font-size: 14px;
+                        cursor: pointer;
+                        border: none;
+                        transition: background 0.3s;
+                        flex: 1;
+                    "
+                    onmouseover="this.style.background='#5a3980'"
+                    onmouseout="this.style.background='#764ba2'"
+                >
+                    ✨ Create Task
+                </button>
+                <a href="{% url 'core:task_list' %}" style="
+                    background: #e0e0e0;
+                    color: #333;
+                    padding: 12px 24px;
+                    border-radius: 6px;
+                    text-decoration: none;
+                    font-weight: 600;
+                    font-size: 14px;
+                    cursor: pointer;
+                    border: none;
+                    transition: background 0.3s;
+                    display: inline-flex;
+                    align-items: center;
+                    flex: 1;
+                    justify-content: center;
+                "
+                    onmouseover="this.style.background='#d0d0d0'"
+                    onmouseout="this.style.background='#e0e0e0'"
+                >
+                    ✕ Cancel
+                </a>
+            </div>
+        </form>
+
+        <!-- Info Box -->
+        <div style="
+            margin-top: 30px;
+            padding: 16px;
+            background: #d4edda;
+            border: 1px solid #28a745;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #155724;
+        ">
+            ℹ️ <strong>Note:</strong> You are creating this task for yourself. The task will be owned by your account ({{ user.username }}) and you will be able to manage it.
+        </div>
+    </div>
+</div>
+{% endblock %}
