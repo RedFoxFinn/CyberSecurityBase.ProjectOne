@@ -69,27 +69,47 @@ The project is implemented in Python(3) using [Django](https://www.djangoproject
 
 The code was written with Visual Studio Code as the IDE and in CUBBLI OS (Uni. Helsinki flavor of the Ubuntu).
 
-## Running the Application
+## Setup & running the application
 
-[Quick guide for setup & run](QUICKSTART.md)
-
-### Vulnerable Mode (Default)
+### 1. Create virtual environment (VENV)
 ```bash
-bash setup.sh
-source venv/bin/activate
-python manage.py runserver
-```
-Visit: `http://localhost:8000/`
-
-### Secure Mode
-```bash
-VULNERABLE=False python manage.py runserver
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-### Create Test Users
+### 2. Install dependencies
 ```bash
-python manage.py createsuperuser
+pip3 install -r requirements.txt
 ```
+
+### 3. Run migrations
+```bash
+python3 manage.py migrate
+```
+
+### 4. Create superuser (optional, but might be useful)
+```bash
+python3 manage.py createsuperuser
+```
+
+### 5. Create initial data for testing purposes
+```bash
+python3 manage.py create_test_data
+```
+
+### 6. Run the server
+
+**Run in Vulnerable Mode (default):**
+```bash
+python3 manage.py runserver
+```
+
+**Run in Secure Mode:**
+```bash
+VULNERABLE=False python3 manage.py runserver
+```
+
+Visit `http://localhost:8000/` in your browser and have fun
 
 ## Report
 
