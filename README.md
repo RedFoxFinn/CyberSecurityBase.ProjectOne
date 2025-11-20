@@ -72,34 +72,34 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
 ### 2. Install dependencies
-```
+```bash
 pip3 install -r requirements.txt
 ```
 
 ### 3. Run migrations
-```
+```bash
 python3 manage.py migrate
 ```
 
 ### 4. Create superuser (optional, but might be useful)
-```
+```bash
 python3 manage.py createsuperuser
 ```
 
 ### 5. Create initial data for testing purposes
-```
+```bash
 python3 manage.py create_test_data
 ```
 
 ### 6. Run the server
 
 **Run in Vulnerable Mode (default):**
-```
+```bash
 python3 manage.py runserver
 ```
 
 **Run in Secure Mode:**
-```
+```bash
 VULNERABLE=False python3 manage.py runserver
 ```
 
@@ -118,7 +118,6 @@ Report states where in the code the vulnerabilities are implemented AND how or w
 So.. the screenshots we're talking about? As files, they're [here](screenshots/).
 
 As extension to the report they are provided as a separate `.md` [here](SCREENSHOTS.md).
-````
 
 ## Selected vulnerability categories
 
