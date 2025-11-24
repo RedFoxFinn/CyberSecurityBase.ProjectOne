@@ -40,22 +40,22 @@ This demonstrates real-world broken access control vulnerabilities that could al
 - Delete other users' data
 - Escalate their privileges
 
-## Selected Vulnerability Categories
+## Selected vulnerability categories
 
-### A01 - Broken Access Control
+### A01 - Broken access control
 [description](https://owasp.org/Top10/A01_2021-Broken_Access_Control/)
 
 ### A03 - Injection
 [description](https://owasp.org/Top10/A03_2021-Injection/)
 
-### A04 - Insecure Design
+### A04 - Insecure design
 [description](https://owasp.org/Top10/A04_2021-Insecure_Design/)
 
-### A07 - Identification and Authentication Failures
+### A07 - Identification and authentication failures
 [description](https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/)
 
-### A08 - Software and Data Integrity Failures
-[description](https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/)
+### A09 - Security logging and monitoring failures
+[description](https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/)
 
 ## Technically
 
@@ -108,43 +108,6 @@ Visit `http://localhost:8000/` in your browser and have fun
 ## Report
 
 The Essay / report is in a separate file [here](REPORT.md). This is due to the fact that it is easier to copy/paste for submission form of the course.
-
-Report states where in the code the vulnerabilities are implemented AND how or where the fix is provided.
-
-- Approx. 1000 words, hard limit 800 -- 1500 words
-
-### Screenshots
-
-So.. the screenshots we're talking about? As files, they're [here](screenshots/).
-
-As extension to the report they are provided as a separate `.md` [here](SCREENSHOTS.md).
-
-## Selected vulnerability categories
-
-### A01 - Broken access control
-[description](https://owasp.org/Top10/A01_2021-Broken_Access_Control/)
-
-### A03 - Injection
-[description](https://owasp.org/Top10/A03_2021-Injection/)
-
-### A04 - Insecure design
-[description](https://owasp.org/Top10/A04_2021-Insecure_Design/)
-
-### A07 - Identification and authentication failures
-[description](https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/)
-
-### A09 - Security logging and monitoring failures
-[description](https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/)
-
-## Technically
-
-The project is implemented in Python(3) using [Django](https://www.djangoproject.com/) framework and its features.
-
-The code was written with Visual Studio Code as the IDE and in CUBBLI OS (Uni. Helsinki flavor of the Ubuntu).
-
-## Report
-
-The Essay / report is in separate file [here](REPORT.md). This is due to the fact that it is easier to copy/paste for submission form of the course.
 
 Report states where in the code the vulnerabilities are implemented AND how or where the fix is provided.
 
