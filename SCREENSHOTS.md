@@ -1,3 +1,6 @@
+
+img { max-width: 320px; }
+
 # Landing
 
 ![Vulnerable](screenshots/Task.Management.landing.vulnerable.png)
