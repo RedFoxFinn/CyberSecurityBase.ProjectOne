@@ -1,45 +1,45 @@
 # Landing
 
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.landing.vulnerable.png" alt="Vulnerable" width="300"/>
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.landing.fixed.png" alt="Fixed" width="300"/>
+![Vulnerable](screenshots/Task.Management.landing.vulnerable.png)
+![Fixed](screenshots/Task.Management.landing.fixed.png)
 
 # Login
 
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.login.unlogged.vulnerable.png" alt="Vulnerable" width="300"/>
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.login.unlogged.fixed.png" alt="Fixed" width="300"/>
+![Vulnerable](screenshots/Task.Management.login.unlogged.vulnerable.png)
+![Fixed](screenshots/Task.Management.login.unlogged.fixed.png)
 
 # Register
 
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.register.unlogged.vulnerable.png" alt="Vulnerable" width="300"/>
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.register.unlogged.fixed.png" alt="Fixed" width="300"/>
+![Vulnerable](screenshots/Task.Management.register.unlogged.vulnerable.png)
+![Fixed](screenshots/Task.Management.register.unlogged.fixed.png)
 
 # Tasks
 
 ## Unlogged
 
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.tasks.unlogged.vulnerable.png" alt="Vulnerable" width="300"/>
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.tasks.unlogged.fixed.png" alt="Fixed" width="300"/>
+![Vulnerable](screenshots/Task.Management.tasks.unlogged.vulnerable.png)
+![Fixed](screenshots/Task.Management.tasks.unlogged.fixed.png)
 
 ## Logged
 
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.tasks.logged.vulnerable.png" alt="Vulnerable" width="300"/>
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.tasks.logged.fixed.png" alt="Fixed" width="300"/>
+![Vulnerable](screenshots/Task.Management.tasks.logged.vulnerable.png)
+![Fixed](screenshots/Task.Management.tasks.logged.fixed.png)
 
 # Details
 
 Unlogged vulnerable mode task detail, no edit capabilities
 
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.taskdetails.unlogged.vulnerable.png" alt="Vulnerable" width="300"/>
+![Vulnerable](screenshots/Task.Management.taskdetails.unlogged.vulnerable.png)
 
 # Edit
 
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.taskedit.logged.vulnerable.png" alt="Vulnerable" width="300"/>
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.taskedit.logged.fixed.png" alt="Fixed" width="300"/>
+![Vulnerable](screenshots/Task.Management.taskedit.logged.vulnerable.png)
+![Fixed](screenshots/Task.Management.taskedit.logged.fixed.png)
 
 # Delete
 
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.taskdelete.logged.vulnerable.png" alt="Vulnerable" width="300"/>
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.taskdelete.logged.fixed.png" alt="Fixed" width="300"/>
+![Vulnerable](screenshots/Task.Management.taskdelete.logged.vulnerable.png)
+![Fixed](screenshots/Task.Management.taskdelete.logged.fixed.png)
 
 # Create
 
@@ -47,19 +47,19 @@ Unlogged vulnerable mode task detail, no edit capabilities
 
 Form itself works the same in both variants
 
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.taskcreate.logged.vulnerable.png" alt="Vulnerable" width="300"/>
+![Vulnerable](screenshots/Task.Management.taskcreate.logged.vulnerable.png)
 
 ## Details after creating a task
 
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.aftercreate.logged.vulnerable.png" alt="Vulnerable" width="300"/>
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.aftercreate.fixed.png" alt="Fixed" width="300"/>
+![Vulnerable](screenshots/Task.Management.aftercreate.logged.vulnerable.png)
+![Fixed](screenshots/Task.Management.aftercreate.fixed.png)
 
 # SQL-injection
 
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.tasksearch.injection.logged.vulnerable.png" alt="Vulnerable" width="300"/>
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.tasksearch.injection.logged.fixed.png" alt="Fixed" width="300"/>
+![Vulnerable](screenshots/Task.Management.tasksearch.injection.logged.vulnerable.png)
+![Fixed](screenshots/Task.Management.tasksearch.injection.logged.fixed.png)
 
 # Logs
 
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.logging.vulnerable.png" alt="Vulnerable" width="300"/>
-<img src="https://raw.githubusercontent.com/RedFoxFinn/CyberSecurityBase.ProjectOne/tree/main/screenshots/Task.Management.logging.fixed.png" alt="Fixed" width="300"/>
+![Vulnerable](screenshots/Task.Management.logging.vulnerable.png)
+![Fixed](screenshots/Task.Management.logging.fixed.png)
