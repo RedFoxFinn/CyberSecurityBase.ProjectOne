@@ -1,5 +1,8 @@
-## PROJECT LINK: https://github.com/RedFoxFinn/CyberSecurityBase.ProjectOne
-installation instructions if needed
+## PROJECT LINK:
+- https://github.com/RedFoxFinn/CyberSecurityBase.ProjectOne
+
+## Link to this report:
+- https://github.com/RedFoxFinn/CyberSecurityBase.ProjectOne/blob/main/REPORT.md
 
 ## NOTE 1
 
