@@ -523,14 +523,24 @@ def register_view(request):
                 'user': request.user,
             })
 
-        # Create superuser
-        user = User.objects.create_user(
-            username=username,
-            email=email,
-            password=password,
-            is_staff=True,
-            is_superuser=True,
-        )
+        if settings.VULNERABLE:
+            # Create superuser
+            user = User.objects.create_user(
+                username=username,
+                email=email,
+                password=password,
+                is_staff=True,
+                is_superuser=True,
+            )
+        else:
+            # Create regular user
+            user = User.objects.create_user(
+                username=username,
+                email=email,
+                password=password,
+                is_staff=False,
+                is_superuser=False,
+            )
 
         messages.success(request, f'Account created successfully! Welcome {username}. You are now logged in as a superuser.')
 

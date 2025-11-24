@@ -108,7 +108,6 @@ LOGIN_REDIRECT_URL = '/tasks/'  # Redirect all users (including superusers) to t
 
 if VULNERABLE:
     LOGGING_CONFIG = None  # Disable logging configuration for vulnerable mode
-    print("WARNING: Application running in VULNERABLE mode")
 else:
     LOGGING = {
         'version': 1,
@@ -130,4 +129,3 @@ else:
             'level': 'INFO',
         },
     }
-    print("Application running in SECURE mode")
