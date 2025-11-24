@@ -1,6 +1,6 @@
 # Landing
 
-![Vulnerable](screenshots/Task.Management.landing.vulnerable.png?width=320)
+![Vulnerable](screenshots/Task.Management.landing.vulnerable.png)
 ![Fixed](screenshots/Task.Management.landing.fixed.png)
 
 # Login
