@@ -1,10 +1,6 @@
-<style>
-img { max-width: 320px; }
-</style>
-
 # Landing
 
-![Vulnerable](screenshots/Task.Management.landing.vulnerable.png)
+![Vulnerable](screenshots/Task.Management.landing.vulnerable.png?width=320)
 ![Fixed](screenshots/Task.Management.landing.fixed.png)
 
 # Login
