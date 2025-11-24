@@ -18,13 +18,13 @@ python3 -m venv venv
 source venv/bin/activate
 
 echo "Upgrading pip..."
-pip install --upgrade pip
+pip3 install --upgrade pip3
 
 echo "Installing requirements..."
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 echo "Running migrations..."
-python manage.py migrate
+python3 manage.py migrate
 
 echo "Creating initial data..."
 python3 manage.py create_test_data
